@@ -1,0 +1,80 @@
+<!-- STYLES -->
+<style>
+  /* ==========================================================================
+    FORM
+     ========================================================================== */
+  #contact {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .contact-form {
+    max-width: 45%;
+  }
+
+  #submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-label {
+    display: block;
+    font-family: 'Primary', serif;
+    font-size: 1rem;
+    color: var(--dark);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--plum);
+    border-radius: 8px;
+    color: var(--plum);
+    font-size: 1rem;
+    font-family: 'Secondary', serif;
+    transition: border-color 0.2s ease;
+  }
+
+  .form-input:focus,
+  .form-textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+  }
+
+  .form-textarea {
+    resize: vertical;
+  }
+</style>
+
+<!-- HTML -->
+<section id="contact" class="section contact-form">
+  <div id="toast" class="toast"></div>
+  <h2 class="section-title">Contact Us</h2>
+  <form id="form" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="aa5627ea-16c2-4864-a9ef-777729fae756">
+    <div class="form-group">
+      <label class="form-label" for="name">Name</label>
+      <input type="text" id="name" name="name" class="form-input" required>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="email">Email</label>
+      <input type="email" id="email" name="email" class="form-input" required>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="message">Message</label>
+      <textarea id="message" name="message" rows="5" class="form-textarea" required></textarea>
+    </div>
+    <div id="submit">
+      <button type="submit" class="btn-secondary secondary-btn-text ">Send Message</button>
+      <div id="result"></div>
+    </div>
+  </form>
+</section>

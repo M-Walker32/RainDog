@@ -1,0 +1,181 @@
+/* ==========================================================================
+   COLOR VARIABLES
+   ========================================================================== */
+:root {
+  /* Brand Colors */
+  --primary: #d5ccc0;
+  --secondary: #827a04;
+  --plum: #290a08;
+  --olive: #827a04;
+  --spice: #71301c;
+
+  /* Theme Neutrals */
+  --light: #d5ccc0;
+  --dark: #290a08;
+
+  /* Text Colors */
+  --text-light: #d5ccc0;
+  --text-dark: #290a08;
+  --text-primary: #827a04;
+  --text-secondary: #71301c;
+
+  /* Borders & Overlays */
+  --border: #290a08;
+  --overlay: rgba(0, 0, 0, 0.55);
+}
+
+/* ==========================================================================
+     BASE & RESET STYLES
+     ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--color-dark);
+  color: var(--color-text-main);
+  line-height: 1.6;
+}
+
+.section {
+  padding: 80px 20px;
+  margin: 0 auto;
+  min-height: 100vh;
+  height: 100%;
+}
+
+/* ==========================================================================
+     TEXT STYLES
+     ========================================================================== */
+/* CHECKED */
+.title {
+  position: relative;
+  z-index: 3;
+  font-family: 'Primary', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0;
+  color: var(--primary);
+}
+
+.section-title {
+  font-size: 2rem;
+  font-family: 'Primary', serif;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.subtitle {
+  margin-top: 5%;
+  font-size: .75rem;
+  color: var(--spice);
+  font-style: oblique;
+  margin-bottom: 30px;
+}
+
+/* ==========================================================================
+     BUTTONS
+     ========================================================================== */
+
+.primary-btn-text {
+  font-family: 'Secondary', sans-serif;
+  color: var(--text-primary);
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  position: relative;
+  z-index: 3;
+  padding: 10px 20px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.btn-primary:hover {
+  color: var(--primary);
+}
+
+.secondary-btn-text {
+  font-family: 'Primary', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--light);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background: var(--secondary);
+  padding: 12px 24px;
+  border-radius: 8px;
+  border-color: var(--olive);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+     TOAST NOTIFICATIONS
+     ========================================================================== */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--color-primary);
+  color: var(--color-text-main);
+  padding: 15px 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+      MEDIA QUERIES
+     ========================================================================== */
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.25rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@font-face {
+  font-family: 'Primary';
+  src: url('../assets/fonts/BNWispy.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Secondary';
+  /* Placeholder: Use a relative equivalent like Arial or Georgia */
+  src: local('Arial');
+  /* Use a system font as a temporary fallback */
+  font-weight: normal;
+  font-style: normal;
+}
