@@ -1,72 +1,70 @@
-<!-- STYLE -->
 <style>
   .hero {
     position: relative;
-    height: 100vh;
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
     overflow: hidden;
-    padding: 20px;
   }
 
-  /* CHECKED */
-  .hero-video {
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-  }
-
-  /* CHECKED */
   .hero-image {
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
+    /* max-height: 100%; */
+    width: 100%;
     height: auto;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
+    margin: 0 auto;
+    object-fit: contain;
+    z-index: 1;
   }
 
-  /* CHECKED */
-  .hero-overlay {
+  .hero-content {
     position: absolute;
-    z-index: 2;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: var(--color-overlay);
+    display: flex;
+    justify-content: space-between;
+    /* Space out the title and link */
+    align-items: center;
+    padding: 20px;
+    z-index: 2;
+    /* Place content above the image */
   }
 
-  /* CHECKED */
-  .hero-content {
-    position: relative;
-    z-index: 3;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    width: 100%;
-    padding: 20px;
+  .hero-content .title {
+    font-size: 2rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+  }
+
+  /* Mobile-specific styles */
+  @media (max-width: 768px) {
+    .hero {
+      height: auto;
+    }
+
+    .hero-image {
+      max-width: 100%;
+      max-height: 80%;
+    }
+
+    .hero-content .title {
+      font-size: 1.5rem;
+    }
+
+    .btn {
+      font-size: 0.9rem;
+    }
   }
 </style>
 
 <!-- HTML -->
 <section>
   <header class="hero">
-    <video autoplay loop muted playsinline class="hero-video">
-      <!-- <source src="videos/background-loop.mp4" type="video/mp4"> -->
-    </video>
     <div class="hero-overlay"></div>
     <img src="/assets/images/Rain Dog Branding-11.png" alt="Rain Dog Branding" class="hero-image">
 

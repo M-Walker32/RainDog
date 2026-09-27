@@ -1,20 +1,20 @@
-<!-- STYLES -->
 <style>
   #about {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    max-width: 90%;
-    height: 100vh;
-    margin: 0 auto;
-    margin-top: 5%;
+    flex-wrap: wrap;
+    /* Allow wrapping for smaller screens */
     padding: 20px;
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
   }
 
   #about .about-image {
     flex: 1;
     max-width: 50%;
+    /* Take up half the width on larger screens */
+    padding: 10px;
   }
 
   #about .about-image img {
@@ -27,6 +27,47 @@
     flex: 2;
     text-align: justify;
     margin-left: 15%;
+    /* Default margin for larger screens */
+    padding: 10px;
+  }
+
+  /* Mobile-specific styles */
+  @media (max-width: 768px) {
+    #about {
+      flex-direction: column;
+      /* Stack content vertically */
+      padding: 10px;
+    }
+
+    #about .about-image {
+      order: 1;
+      /* Ensure image appears first */
+      max-width: 100%;
+      /* Full width for mobile */
+      margin-bottom: 20px;
+      /* Add spacing below the image */
+    }
+
+    #about .about-text {
+      order: 2;
+      /* Ensure text appears second */
+      margin-left: 0;
+      /* Remove left margin for mobile */
+      text-align: center;
+      /* Center-align text for better readability */
+      padding: 0 10px;
+      /* Add padding to prevent text from touching edges */
+    }
+
+    #about .about-text h2 {
+      font-size: 1.5rem;
+      /* Adjust heading size for mobile */
+    }
+
+    #about .about-text p {
+      font-size: 1rem;
+      /* Adjust paragraph size for mobile */
+    }
   }
 </style>
 

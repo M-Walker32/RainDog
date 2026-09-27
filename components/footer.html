@@ -2,14 +2,21 @@
 <style>
   #footer {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     background-color: var(--dark);
   }
 
+  .footer-text {
+    font-size: 1rem;
+    color: var(--text-light);
+    text-align: left;
+  }
+
   #footer .social-image {
     max-height: 150px;
-    /* Adjust the size of the image */
     width: auto;
   }
 
@@ -22,18 +29,11 @@
 
   #footer .btn:hover {
     color: var(--primary);
-    /* Add a hover effect */
   }
 
   #footer .section-text {
-    /* display: flex; */
-    /* line-height: 1.6; */
     font-size: 1rem;
     margin-top: auto;
-    /* align-items: end; */
-    /* align-self: flex-end; */
-    /* justify-content: end; */
-    /* justify-items: end; */
     color: var(--text-light);
   }
 
@@ -41,33 +41,48 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    justify-content: flex-end;
+    min-width: 50%;
   }
 
   #footer .section {
     align-items: flex-end;
   }
+
+  /* Mobile-specific styles */
+  @media (max-width: 768px) {
+    #footer {
+      flex-direction: column;
+    }
+
+    .footer-links {
+      order: 1;
+      align-items: end;
+      margin-bottom: 20px;
+    }
+
+    .footer-text {
+      order: 2;
+      text-align: center;
+      margin-top: 20%;
+      font-size: 0.5rem;
+    }
+  }
 </style>
+
 <!-- HTML -->
 <section id="footer" class="section">
-  <div>
-    <!-- <img src="/assets/images/word+head+slogan-light.png" alt="Small Left Image" class="social-image"> -->
-    <div class="footer-text">
-      <p class="section-text">© 2026 Rain Dog Wines. All rights reserved</p>
-      <p class="section-text">By using this website and/or making purchases here, you verify that you are
-        21 years of age or older as of <span id="current-date"></span></p>
-    </div>
+  <div class="footer-text">
+    <p class="section-text">By using this website and/or making purchases here, you verify that you are
+      21 years of age or older as of <span id="current-date"></span></p>
+    <p class="section-text">© 2026 Rain Dog Wines. All rights reserved</p>
   </div>
   <div class="footer-links">
     <p class="title">Rain Dog Wines</p>
     <p style="margin-top: 0%;" class="subtitle">Good wine for drinkin'</p>
-    <a href="https://www.instagram.com/raindogwines" target="_blank" class="btn btn-primary primary-btn-text"> Instagram
-    </a>
-    <a href="https://www.privacypolicies.com/live/b92496f7-2bee-4ebe-b35d-0cbe14d5183e" target="_blank"
-      class="btn btn-primary primary-btn-text"> Privacy
-      Policy
-    </a>
-    <a href="https://www.instagram.com/raindogwines" target="_blank" class="btn btn-primary primary-btn-text"> Terms
-    </a>
+    <a href="https://www.instagram.com/raindogwines" target="_blank"
+      class="btn btn-primary primary-btn-text">Instagram</a>
+    <a href="https://www.privacypolicies.com/live/b92496f7-2bee-b35d-0cbe14d5183e" target="_blank"
+      class="btn btn-primary primary-btn-text">Privacy Policy</a>
+    <a href="https://www.instagram.com/raindogwines" target="_blank" class="btn btn-primary primary-btn-text">Terms</a>
   </div>
 </section>
