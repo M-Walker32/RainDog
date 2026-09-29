@@ -166,7 +166,7 @@ body {
 
 @font-face {
   font-family: 'Primary';
-  src: url('../assets/fonts/BNWispy.otf') format('opentype');
+  src: url('../assets/fonts/font.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
